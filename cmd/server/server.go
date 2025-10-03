@@ -1,6 +1,9 @@
 package main
 
 import (
+	"fmt"
+	"log"
+
 	"github.com/alberto-debug/enrollmate/config"
 	"github.com/alberto-debug/enrollmate/internal/model"
 	"github.com/alberto-debug/enrollmate/internal/routes"
@@ -20,5 +23,13 @@ func main() {
 	routes.HomeRoutes(router)
 
 	// Start server
-	router.Run()
+	port := ":8080"
+	fmt.Printf("🚀 Starting EnrollMate server on port %s...\n", port)
+	fmt.Printf("🌐 Server will be available at: http://localhost%s\n", port)
+
+	if err := router.Run(port); err != nil {
+		log.Fatal("❌ Server failed to start: ", err)
+	}
+
+	//router.Run()
 }
