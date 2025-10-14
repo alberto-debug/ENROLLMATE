@@ -57,7 +57,7 @@ enrollmate/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/alberto-debug/enrollmate.git
+git clone git@github.com:alberto-debug/ENROLLMATE.git
 cd enrollmate
 ```
 
