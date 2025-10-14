@@ -9,16 +9,14 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
-
+       
 var DB *gorm.DB
 
-func ConnectDb() {
+func ConnectDB() {
 
-	//load .env
 	err := godotenv.Load()
 
 	if err != nil {
-
 		log.Fatal(" ⚠️ Error loading .env file")
 
 	} else {

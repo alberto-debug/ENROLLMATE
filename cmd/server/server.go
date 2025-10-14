@@ -13,23 +13,26 @@ import (
 func main() {
 
 	//Connect Database and configure the auto migration of the scheme
-	config.ConnectDb()
+	config.ConnectDB()
 	config.DB.AutoMigrate(&model.Student{})
 
-	// Setup router
 	router := gin.Default()
 
 	//Register the Routes
 	routes.HomeRoutes(router)
+	routes.StudentRoutes(router)
 
 	// Start server
 	port := ":8080"
 	fmt.Printf("🚀 Starting EnrollMate server on port %s...\n", port)
 	fmt.Printf("🌐 Server will be available at: http://localhost%s\n", port)
 
-	if err := router.Run(port); err != nil {
+	if err := router.Run(port); err == nil {
+
 		log.Fatal("❌ Server failed to start: ", err)
+
 	}
 
-	//router.Run()
 }
+
+
