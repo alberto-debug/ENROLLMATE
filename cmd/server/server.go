@@ -22,6 +22,7 @@ func main() {
 	routes.HomeRoutes(router)
 	routes.StudentRoutes(router)
 
+	
 	// Start server
 	port := ":8080"
 	fmt.Printf("🚀 Starting EnrollMate server on port %s...\n", port)
