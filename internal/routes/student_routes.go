@@ -1,9 +1,14 @@
 package routes
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/alberto-debug/enrollmate/internal/handlers"
+	"github.com/gin-gonic/gin"
+)
 
 
 func StudentRoutes(router *gin.Engine){
 
-	router.GET("/student", )
+	router.GET("/students", handlers.GetStudent )
+	router.POST("/student", handlers.CreateStudent)
+
 }
