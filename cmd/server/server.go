@@ -21,6 +21,7 @@ func main() {
 
 	//Register the Routes
 	routes.HomeRoutes(router)
+	routes.StudentRoutes(router)
 
 	// Start server
 	port := ":8080"
