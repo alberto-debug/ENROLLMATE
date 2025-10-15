@@ -9,11 +9,12 @@ import (
 )
 
 // Get /students
-func GetStudents(c *gin.Context){
+func GetStudent(c *gin.Context){
 	var student []model.Student
 	config.DB.Find(&student)
 	c.JSON(http.StatusOK, student)
 }
 
 //Post /students
+
 
