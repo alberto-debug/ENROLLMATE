@@ -16,13 +16,12 @@ func main() {
 	config.ConnectDB()
 	config.DB.AutoMigrate(&model.Student{})
 
+	//Define the Gin router
 	router := gin.Default()
 
 	//Register the Routes
 	routes.HomeRoutes(router)
-	routes.StudentRoutes(router)
 
-	
 	// Start server
 	port := ":8080"
 	fmt.Printf("🚀 Starting EnrollMate server on port %s...\n", port)
@@ -35,5 +34,3 @@ func main() {
 	}
 
 }
-
-
